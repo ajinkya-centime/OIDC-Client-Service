@@ -1,0 +1,64 @@
+#################################################################
+### List of Properties required for pipeline to run.
+#################################################################
+
+#################################################################
+### Application specific properties.
+#################################################################
+
+appName: service-template
+appDescription: 'Service template project for centime application.'
+pipelineType: service
+branchName: ${BRANCH_NAME}
+sourceCodeLocation: https://github.com/centimetech/service-template
+appDeveloper: ['rahul-centime: Rahul Bajaj', 'raunak-centime: Raunak Duggar']
+
+#################################################################
+### Artifactory specific properties.
+#################################################################
+
+artifactID: common-gradle-lib
+groupId: com/centime/common
+version: 1.0-SNAPSHOT
+artifactoryURL: https://centime.jfrog.io/centime
+artifactoryInstance: centime-artifactory
+artifactoryReleaseRepo: libs-release-local
+artifactorySnashotRepo: libs-snapshot-local
+artifactoryResolverRepo: libs-release
+artifactoryPluginsRepo: plugins-release
+
+#################################################################
+### Build specific properties.
+#################################################################
+
+gradleBuildGoals:
+  snapshot: clean build
+  release: clean build bootJar
+
+gradleBuildParameters:
+  snapshot: --info
+  release: --profile
+
+numberOfBuildsToRetain: 20
+emailNotifications:
+  DEV_POC: rahul@centime.com,raunak@centime.com
+  BAR_POC: rahul@centime.com,ram@centime.com
+
+
+#################################################################
+### Deployment Properties.
+#################################################################
+
+devEnvironments:
+  - DEV
+qaEnvironments:
+  - QA
+
+#################################################################
+### Test Related properties
+#################################################################
+runTests: true
+sonarURL: http://devops.centime.com:9000/
+testCommand:
+deployUponTestSuccess: true
+deploymentEnvironment: "dev"

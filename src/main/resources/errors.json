@@ -1,0 +1,7 @@
+{
+  "ST000": {
+    "code": "ST000",
+    "severity": "FATAL",
+    "message": "Some error"
+  }
+}
