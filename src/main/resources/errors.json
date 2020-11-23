@@ -1,0 +1,7 @@
+{
+  "ST001": {
+    "code": "ST001",
+    "severity": "FATAL",
+    "message": "String Mismatch Error"
+  }
+}
