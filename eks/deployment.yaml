@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: $SERVICE_NAME
+ labels:
+  app: $SERVICE_NAME
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: $SERVICE_NAME
+ template:
+  metadata:
+   labels:
+    app: $SERVICE_NAME
+  spec:
+   containers:
+   - name: $SERVICE_NAME
+     env:
+      - name: spring.profiles.active
+        value: dev
+     image: centime-docker.jfrog.io/$SERVICE_NAME:$BUILD_NUMBER
+     ports:
+     - containerPort: $PORT_NUMBER
+   imagePullSecrets:
+   - name: $KUBERNETES_SECRET_NAME
