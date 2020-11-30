@@ -1,4 +1,4 @@
-package com.centime.demo.constants;
+package com.centime.oidc.constants;
 
 public class EndpointConstants {
 
@@ -11,7 +11,6 @@ public class EndpointConstants {
    * The constant HELLO_WORLD
    */
   public static final String HELLO_WORLD = "/helloworld";
-
 
   private EndpointConstants() {
   }

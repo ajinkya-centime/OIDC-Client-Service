@@ -1,4 +1,4 @@
-package com.centime.demo.constants;
+package com.centime.oidc.constants;
 
 //TODO: Rename /Refactor this to specific service exception code
 /**

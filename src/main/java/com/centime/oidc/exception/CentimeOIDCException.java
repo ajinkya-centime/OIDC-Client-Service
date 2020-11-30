@@ -1,8 +1,8 @@
-package com.centime.demo.exception;
+package com.centime.oidc.exception;
 
 import com.centime.exception.CentimeException;
 
-public class CentimeDemoException extends CentimeException {
+public class CentimeOIDCException extends CentimeException {
 
   // TODO:Rename/Refactor Exception as per service name like - AdminServiceException
   /**
@@ -10,7 +10,7 @@ public class CentimeDemoException extends CentimeException {
    * @param errorCode
    *          the error code
    */
-  public CentimeDemoException(String errorCode) {
+  public CentimeOIDCException(String errorCode) {
     super(errorCode);
   }
 }

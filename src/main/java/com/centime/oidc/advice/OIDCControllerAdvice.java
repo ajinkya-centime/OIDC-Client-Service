@@ -1,11 +1,11 @@
-package com.centime.startup;
+package com.centime.oidc.advice;
 
-import com.centime.demo.controller.Demo;
-import com.centime.demo.exception.CentimeDemoException;
 import com.centime.enums.StatusEnum;
 import com.centime.error.ErrorCodes;
 import com.centime.exception.NoSuchErrorException;
 import com.centime.model.common.Response;
+import com.centime.oidc.controller.OIDCController;
+import com.centime.oidc.exception.CentimeOIDCException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 /**
  * Controller advice for Signup Controller
  */
-@ControllerAdvice(assignableTypes = { Demo.class })
-public class DemoControllerAdvice {
+@ControllerAdvice(assignableTypes = { OIDCController.class })
+public class OIDCControllerAdvice {
   // TODO:Rename/Refactor Controller Advice and change assignable Types above as per list of
   // controller classes
 
@@ -32,11 +32,11 @@ public class DemoControllerAdvice {
    * @param e
    *          the e
    * @return the response entity
-   * @throws CentimeDemoException
+   * @throws CentimeOIDCException
    *           the no such error exception
    */
-  @ExceptionHandler(CentimeDemoException.class)
-  public ResponseEntity<Response> centimeDemoException(final CentimeDemoException e)
+  @ExceptionHandler(CentimeOIDCException.class)
+  public ResponseEntity<Response> centimeDemoException(final CentimeOIDCException e)
       throws NoSuchErrorException {
     Response responseObject = new Response();
     responseObject.addError(errorCodes.getError(e.getErrorCode()));

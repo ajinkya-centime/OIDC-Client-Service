@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 @SpringBootApplication(scanBasePackages = "com.centime")
 @EnableConfigurationProperties
-public class DemoApplication {
+public class OIDCSSOStartUpApplication {
   private static final CentimeLogger log = CentimeLogger.getLogger();
 
   // TODO:Rename/Refactor DemoApplication to specific app
@@ -17,10 +17,10 @@ public class DemoApplication {
 
     // TODO:change log messages belows
 
-    log.info("Starting Template Micro Services.");
-    SpringApplication.run(DemoApplication.class, args);
+    log.info("Starting OIDC SSO Service.");
+    SpringApplication.run(OIDCSSOStartUpApplication.class, args);
 
-    log.info("Template Micro Services successfully started");
+    log.info("OIDC SSO Service successfully started");
   }
 
 }
